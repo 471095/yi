@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>景湛建案</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; }
+        .container { max-width: 1200px; margin: auto; }
+        header { background-color: #333; color: white; text-align: center; padding: 20px 0; }
+        .content { padding: 20px; }
+        footer { background-color: #4CAF50; color: white; text-align: center; padding: 10px 0; }
+        .slider { position: relative; width: 100%; }
+        .slides { display: none; }
+        .active { display: block; }
+        .prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; margin-top: -22px; padding: 16px; color: white; font-weight: bold; font-size: 18px; transition: 0.6s ease; border-radius: 0 3px 3px 0; user-select: none; }
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>景湛建案</h1>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>基本資訊</h2>
+            <p>開價: 23萬/坪</p>
+            <p>格局規劃: 2~3房</p>
+            <p>坪數: 22~34坪</p>
+            <p>完工: 2024年10月</p>
+            <p>建設: 天景建設有限公司</p>
+            <p>地址: 屏東縣屏東市大洲里清進路上</p>
+            <!-- 圖片輪播 -->
+            <div class="slider">
+                <div class="slides active"><img src=https://img.onl/xJ7dq3" alt="景湛建案圖片1"></div>
+                <div class="slides"><img src="https://lurl.cc/N2zEG" alt="景湛建案圖片2"></div>
+                <div class="slides"><img src="image3.jpg" alt="景湛建案圖片3"></div>
+                <a class="prev" onclick="moveSlide(-1)">❮</a>
+                <a class="next" onclick="moveSlide(1)">❯</a>
+            </div>
+        </div>
+        <footer>
+            <p>聯絡我們: 0986-851-088轉33915</p>
+            <p>版權所有 © 2024 景湛建案</p>
+        </footer>
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>
